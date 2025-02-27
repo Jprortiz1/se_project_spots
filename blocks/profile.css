@@ -20,6 +20,11 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  color: #212121;
 }
 
 .profile__description {
@@ -34,7 +39,6 @@
   color: rgba(33, 33, 33, 0.7);
   text-overflow: ellipsis;
   overflow: hidden;
-  line-clamp: 3;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -55,12 +59,15 @@
   width: 84px;
   white-space: nowrap;
 }
-.profile__edit-button img {
+.profile__edit-button__icon {
   margin-right: 8px;
+}
+.profile__edit-button:hover {
+  color: #3498db;
+  transform: scale(1, 1);
 }
 
 .profile__add-btn {
-  margin-left: auto;
   font-family: Poppins;
   font-weight: 500;
   font-size: 16px;
@@ -74,7 +81,6 @@
   height: 52px;
   padding: 16px 24px;
   border-radius: 8px;
-  padding-top: 18px;
   padding-right: 32px;
   padding-bottom: 18px;
   padding-left: 32px;
@@ -86,7 +92,12 @@
   margin: 149px 0 0 auto;
 }
 
-.profile__add-btn img {
+.profile__add-btn:hover {
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(252, 245, 229, 1);
+}
+
+.profile__add-btn__icon {
   width: 12px;
   height: 12px;
   margin-right: 2px;
@@ -126,9 +137,6 @@
   .profile__add-btn {
     margin: 0;
     width: 100%;
-    background: none;
-    border: none;
-    width: 288px;
     height: 52;
     padding-top: 18px;
     padding-right: 32px;
@@ -152,16 +160,7 @@
   }
 
   .profile__edit-button {
-    background: none;
-    border: none;
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    width: 84px;
     height: 16px;
-    white-space: nowrap;
     text-align: center;
     width: 100%;
     max-width: 288px;

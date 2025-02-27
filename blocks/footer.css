@@ -5,8 +5,11 @@
   font-weight: 400;
   color: black;
   text-align: center;
+  width: 104px;
+  height: 16px;
+  top: 1340px;
+  left: 668px;
   width: 100%;
-  margin-top: 104px;
 }
 
 .footer__line {

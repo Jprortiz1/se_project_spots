@@ -3,18 +3,12 @@
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
-  color: black;
+  color: #212121;
   text-align: center;
-  width: 104px;
   height: 16px;
-  top: 1340px;
-  left: 668px;
   width: 100%;
 }
-
-.footer__line {
-  width: 1280px;
-  height: 2px;
-  margin: 0 auto 10px;
+.footer {
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+  margin-bottom: 10px;
 }

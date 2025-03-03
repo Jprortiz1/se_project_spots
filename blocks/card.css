@@ -22,6 +22,7 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
+  margin: 0;
 }
 
 .card__like-button {
@@ -34,6 +35,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0;
 }
 .card__like-button:hover {
   opacity: 1;

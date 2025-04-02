@@ -38,10 +38,13 @@
   justify-content: center;
   position: absolute;
   background-color: white;
-  border: 2px solid rgba(33, 33, 33, 1);
-  color: rgba(33, 33, 33, 0.7);
+  border: none;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: rgba(33, 33, 33, 0.5);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.modal__close-btn:hover {
+  color: rgba(33, 33, 33, 1);
 }
 
 .modal__title {

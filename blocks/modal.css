@@ -85,6 +85,12 @@
   font-weight: 500;
   border: none;
 }
+.modal__submit-btn:hover {
+  opacity: 0.8;
+}
+.modal__close-icon:hover {
+  opacity: 1;
+}
 
 .modal__close-icon {
   opacity: 40%;

@@ -44,7 +44,7 @@
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 .modal__close-btn:hover {
-  color: rgba(33, 33, 33, 1);
+  opacity: 1;
 }
 
 .modal__title {
@@ -73,6 +73,7 @@
   border: 1px solid rgba(33, 33, 33, 0.4);
   font-size: 20px;
   font-weight: 500;
+  color: rgba(33, 33, 33, 1);
 }
 
 .modal__submit-btn {

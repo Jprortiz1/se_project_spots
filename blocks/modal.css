@@ -11,10 +11,13 @@
   justify-content: center;
   visibility: hidden;
   padding: 0 20px;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -36,7 +39,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   background-color: white;
   border: none;
   cursor: pointer;
@@ -54,7 +56,8 @@
   font-size: 32px;
   line-height: 100%;
   letter-spacing: 0;
-  color: (33, 33, 33, 1);
+  color: rgba(33, 33, 33, 1);
+  color: #212121;
 }
 
 .modal__label {
@@ -94,8 +97,73 @@
   opacity: 1;
 }
 
+.modal__container_type_image {
+  background: transparent;
+  padding: 0;
+  max-width: 80vw;
+  width: auto;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.modal__caption {
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+  margin: 10px 0 0;
+}
+
 .modal__close-icon {
   opacity: 40%;
+}
+
+/* Additional Styles for Image Preview Modal */
+.modal__container_type_image {
+  background: transparent;
+  padding: 0;
+  max-width: 75%;
+  max-height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__image {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 12px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.modal__caption {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+/* Optional: Make close button visible on dark background */
+.modal__container_type_image .modal__close-btn {
+  top: -40px;
+  right: 0;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  position: absolute;
 }
 
 @media screen and (max-width: 627px) {

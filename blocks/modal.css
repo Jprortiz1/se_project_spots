@@ -156,14 +156,19 @@
   text-align: center;
 }
 
-/* Optional: Make close button visible on dark background */
-.modal__container_type_image .modal__close-btn {
-  top: -40px;
+/* Styles for the image preview modal close button */
+.modal__close-btn_type_image {
+  top: -81px;
   right: 0;
-  top: 20px;
-  right: 20px;
+  background-color: transparent;
+  color: white;
   z-index: 1;
   position: absolute;
+}
+
+.modal__close-btn_type_image .modal__close-icon {
+  opacity: 1;
+  filter: brightness(0) invert(1); /* Makes the icon white */
 }
 
 @media screen and (max-width: 627px) {

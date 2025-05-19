@@ -9,6 +9,7 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .card__content {
@@ -47,6 +48,7 @@
 .card__delete-button:hover {
   opacity: 0.8; /* Slightly reduce opacity on hover */
   transform: scale(1.1); /* Slightly enlarge the icon */
+  background-image: url(../images/delete.hover.svg);
 }
 
 .card__like-button {

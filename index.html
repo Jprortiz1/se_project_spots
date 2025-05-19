@@ -79,29 +79,10 @@
       </footer>
 
       <!-- Edit Profile Modal -->
-      <div class="modal" id="edit-modal">
+      <div class="modal modal--edit" id="edit-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.4854 28.4854L28.4854 12.4854"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M28.4854 28.4854L12.4854 12.4854"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
+            <img src="./images/close_icon_black.svg" alt="Close icon" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
           <form
@@ -135,29 +116,10 @@
       </div>
 
       <!-- New Post Modal -->
-      <div class="modal" id="new-post-modal">
+      <div class="modal modal--new-post" id="new-post-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.4854 28.4854L28.4854 12.4854"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M28.4854 28.4854L12.4854 12.4854"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
+            <img src="./images/close_icon_black.svg" alt="Close icon" />
           </button>
           <h2 class="modal__title">New Post</h2>
           <form id="new-post-form" name="new-post-form" class="modal__form">
@@ -186,33 +148,14 @@
         </div>
       </div>
 
-      <div class="modal" id="image-preview-modal">
-        <figure class="modal__figure n-image-modal-figure">
-          <img src="" alt="" class="modal__image n-modal-image" />
+      <div class="modal modal--preview" id="image-preview-modal">
+        <figure class="modal__figure">
+          <img src="" alt="" class="modal__image" />
           <button
             type="button"
             class="modal__close-btn modal__close-btn_type_image"
           >
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.4854 28.4854L28.4854 12.4854"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M28.4854 28.4854L12.4854 12.4854"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
+            <img src="./images/close_icon_white.svg" alt="Close icon" />
           </button>
           <figcaption class="modal__caption"></figcaption>
         </figure>

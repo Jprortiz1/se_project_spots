@@ -89,6 +89,7 @@
             id="edit-profile-form"
             name="edit-profile-form"
             class="modal__form"
+            novalidate
           >
             <label for="profile-name-input" class="modal__label">
               Name
@@ -96,9 +97,13 @@
                 id="profile-name-input"
                 type="text"
                 class="modal__input"
+                name="name"
                 placeholder="Type your name"
                 required
+                minlength="2"
+                maxlength="40"
               />
+              <span class="modal__input-error name-error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -106,9 +111,13 @@
                 id="profile-description-input"
                 type="text"
                 class="modal__input"
+                name="description"
                 placeholder="Describe yourself"
                 required
+                minlength="2"
+                maxlength="200"
               />
+              <span class="modal__input-error description-error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -122,32 +131,44 @@
             <img src="./images/close_icon_black.svg" alt="Close icon" />
           </button>
           <h2 class="modal__title">New Post</h2>
-          <form id="new-post-form" name="new-post-form" class="modal__form">
-            <label for="card-title-input" class="modal__label">
-              Title
-              <input
-                id="card-title-input"
-                type="text"
-                class="modal__input"
-                placeholder="Enter a title"
-                required
-              />
-            </label>
+          <form
+            id="new-post-form"
+            name="new-post-form"
+            class="modal__form"
+            novalidate
+          >
             <label for="card-url-input" class="modal__label">
               Image URL
               <input
                 id="card-url-input"
                 type="url"
                 class="modal__input"
+                name="image"
                 placeholder="Enter image URL"
                 required
               />
+              <span class="modal__input-error image-error"></span>
+            </label>
+            <label for="card-title-input" class="modal__label">
+              Caption
+              <input
+                id="card-title-input"
+                type="text"
+                class="modal__input"
+                name="caption"
+                placeholder="Enter a title"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <span class="modal__input-error caption-error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Create</button>
           </form>
         </div>
       </div>
 
+      <!-- Image Preview Modal -->
       <div class="modal modal--preview" id="image-preview-modal">
         <figure class="modal__figure">
           <img src="" alt="" class="modal__image" />
@@ -163,6 +184,7 @@
     </div>
 
     <!-- JS -->
+    <script defer src="./scripts/validate.js"></script>
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>

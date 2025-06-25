@@ -237,6 +237,18 @@
   .modal--new-post .modal__submit-btn {
     width: 100% !important;
   }
+  .modal--edit .modal__container .modal__title,
+  .modal--new-post .modal__container .modal__title {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+  }
+  .modal--edit .modal__container .modal__label,
+  .modal--new-post .modal__container .modal__label {
+    font-size: 16px !important;
+  }
 }
 
 .modal--preview {

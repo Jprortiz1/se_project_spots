@@ -60,13 +60,24 @@ const imagePreviewModalCloseBtn =
 const imagePreviewElement = imagePreviewModal.querySelector(".modal__image");
 const imagePreviewCaption = imagePreviewModal.querySelector(".modal__caption");
 
+// Función para cerrar con tecla Escape
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openModalElement = document.querySelector(".modal_opened");
+    if (openModalElement) {
+      closeModal(openModalElement);
+    }
+  }
+}
 // Open/Close Modal functions
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 // Template and card container
@@ -158,6 +169,14 @@ newPostForm.addEventListener("submit", handleNewPostFormSubmit);
 imagePreviewModalCloseBtn.addEventListener("click", () =>
   closeModal(imagePreviewModal)
 );
+// Cerrar el modal haciendo clic en el overlay (fondo oscuro)
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
 
 // Render initial cards
 initialCards.forEach((cardData) => {

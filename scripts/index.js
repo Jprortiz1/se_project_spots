@@ -134,12 +134,6 @@ function handleNewPostFormSubmit(evt) {
   closeModal(newPostModal);
   newPostForm.reset();
   resetValidation(newPostForm, validationSettings); // desactiva botón & borra errores
-
-  const submitButton = newPostForm.querySelector(
-    validationSettings.submitButtonSelector
-  );
-  submitButton.classList.add(validationSettings.inactiveButtonClass);
-  submitButton.disabled = true;
 }
 
 /* ---------- EVENT LISTENERS ---------- */
@@ -151,7 +145,6 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 // New post
 const addPostButton = document.querySelector(".profile__add-btn");
 addPostButton.addEventListener("click", () => {
-  resetValidation(newPostForm, validationSettings); // abre limpio
   openModal(newPostModal);
 });
 newPostModalCloseBtn.addEventListener("click", () => closeModal(newPostModal));

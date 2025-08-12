@@ -9,3 +9,10 @@ build
 node_modules/
 dist/
 .DS_Store
+
+node_modules/
+dist/
+.cache/
+.parcel-cache/
+coverage/
+.DS_Store

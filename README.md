@@ -23,9 +23,3 @@ Good luck and have fun!
 https://jprortiz1.github.io/se_project_spots/
 
 https://drive.google.com/file/d/1wrzCj9IOZH5RUMVxZ5xBs-wwNu9pX0M7/view?usp=sharing
-
-
-### Submission notes
-- Built from se_project_spots_v1.zip
-- Branch: spots-final
-

@@ -63,8 +63,10 @@ function resetValidation(form, settings) {
   toggleButtonState(inputList, button, settings);
 }
 
-// Configuración e inicio
-const validationSettings = {
+// Exportaciones
+export { enableValidation, resetValidation };
+
+export const validationSettings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
@@ -72,5 +74,3 @@ const validationSettings = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__input-error_active",
 };
-
-enableValidation(validationSettings);

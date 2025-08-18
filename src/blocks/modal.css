@@ -32,6 +32,7 @@
 }
 
 .modal__close-btn {
+  background-color: transparent;
   opacity: 1 !important;
   position: absolute;
   top: 32px;
@@ -205,6 +206,36 @@
     font-size: 18px !important;
     margin-bottom: 20px !important;
   }
+  /*  */
+
+  .modal--avatar .modal__container {
+    width: 100% !important;
+    max-width: 320px !important;
+    padding: 25px !important;
+  }
+
+  .modal--avatar .modal__container .modal__close-btn {
+    background-color: transparent !important;
+    top: 20px;
+    right: 25px;
+  }
+  .modal--avatar .modal__container .modal__title {
+    font-size: 24px !important;
+    margin: 13px 0px 32px !important;
+  }
+  .modal--avatar .modal__container .modal__input {
+    font-size: 18px !important;
+    padding: 12px !important;
+  }
+  .modal--avatar .modal__container .modal__label {
+    font-size: 18px !important;
+    margin-bottom: 20px !important;
+  }
+  .modal--avatar .modal__submit-btn {
+    width: 100% !important;
+  }
+
+  /*  */
 
   .modal--new-post .modal__container {
     width: 100% !important;
@@ -237,17 +268,22 @@
   .modal--new-post .modal__submit-btn {
     width: 100% !important;
   }
-  .modal--edit .modal__container .modal__title,
-  .modal--new-post .modal__container .modal__title {
-    font-family: "Poppins", sans-serif !important;
-    font-weight: 500 !important;
-    font-size: 20px !important;
-    line-height: 100% !important;
-    letter-spacing: 0 !important;
+
+  /* Delete model */
+  .modal--delete {
+    padding: 10px;
   }
-  .modal--edit .modal__container .modal__label,
-  .modal--new-post .modal__container .modal__label {
-    font-size: 16px !important;
+  .modal__container_type_delete {
+    padding: 20px !important;
+  }
+  .modal__buttons_type_delete {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal__close-btn_type_delete {
+    top: -50px !important;
+    right: 0 !important;
   }
 }
 
@@ -289,29 +325,95 @@
 .modal--new-post .modal__container .modal__close-btn {
   background-color: transparent !important;
 }
-/* ----------- VALIDATION STYLES ----------- */
 
-.modal__input-error {
-  font-size: 12px;
-  color: red;
-  height: 12px;
-  margin-top: 5px;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.modal__button modal__buton_delete {
 }
 
-.modal__input-error_active {
-  visibility: visible;
-  opacity: 1;
+/* SOLO aplica al modal de DELETE */
+
+.modal--delete {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
 
-.modal__input_type_error {
-  border: 1px solid red;
+.modal--delete_opened {
+  display: flex;
 }
 
-.modal__submit-btn_disabled {
-  background-color: gray;
-  cursor: not-allowed;
-  opacity: 0.6;
+.modal__container_type_delete {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.modal__heading_type_delete {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.modal__buttons_type_delete {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-family: Poppins;
+}
+
+.modal__button_type_delete {
+  width: 130px;
+  padding: 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: black;
+  background-color: #ff5f5f;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.modal__button_type_delete:hover {
+  background-color: #ff3333;
+}
+
+.modal__button_type_cancel {
+  width: 130px;
+  padding: 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  transition: background-color 0.3s ease;
+}
+
+.modal__button_type_cancel:hover {
+  background-color: #212121;
+  color: white;
+}
+
+.modal__close-btn_type_delete {
+  position: absolute;
+  top: -10px;
+  right: -40px;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.modal.modal_opened {
+  display: flex;
 }

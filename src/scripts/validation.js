@@ -1,5 +1,6 @@
 function showInputError(form, input, errorMessage, settings) {
   const errorElement = form.querySelector(`#${input.id}-error`);
+  if (!errorElement) return; // defensa extra
   input.classList.add(settings.inputErrorClass);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(settings.errorClass);
@@ -7,6 +8,7 @@ function showInputError(form, input, errorMessage, settings) {
 
 function hideInputError(form, input, settings) {
   const errorElement = form.querySelector(`#${input.id}-error`);
+  if (!errorElement) return; // defensa extra
   input.classList.remove(settings.inputErrorClass);
   errorElement.textContent = "";
   errorElement.classList.remove(settings.errorClass);
@@ -25,6 +27,7 @@ function hasInvalidInput(inputs) {
 }
 
 function toggleButtonState(inputs, button, settings) {
+  if (!button) return; // por si no hay botón (delete)
   if (hasInvalidInput(inputs)) {
     button.classList.add(settings.inactiveButtonClass);
     button.disabled = true;
@@ -37,6 +40,9 @@ function toggleButtonState(inputs, button, settings) {
 function setEventListeners(form, settings) {
   const inputList = Array.from(form.querySelectorAll(settings.inputSelector));
   const submitButton = form.querySelector(settings.submitButtonSelector);
+
+  // 👇 clave para el form de Delete (no tiene .modal__submit-btn)
+  if (!submitButton) return;
 
   toggleButtonState(inputList, submitButton, settings);
 
@@ -51,7 +57,8 @@ function setEventListeners(form, settings) {
 function enableValidation(settings) {
   const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((form) => {
-    form.addEventListener("submit", (evt) => evt.preventDefault());
+    // ❌ No bloquees los submit globalmente aquí; ya haces preventDefault en tus handlers
+    // form.addEventListener("submit", (evt) => evt.preventDefault());
     setEventListeners(form, settings);
   });
 }
@@ -63,8 +70,10 @@ function resetValidation(form, settings) {
   toggleButtonState(inputList, button, settings);
 }
 
-// Configuración e inicio
-const validationSettings = {
+// Exportaciones
+export { enableValidation, resetValidation };
+
+export const validationSettings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
@@ -72,5 +81,3 @@ const validationSettings = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__input-error_active",
 };
-
-enableValidation(validationSettings);

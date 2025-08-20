@@ -417,3 +417,23 @@
 .modal.modal_opened {
   display: flex;
 }
+/* ---------- Input Errors ---------- */
+.modal__input-error {
+  font-size: 12px;
+  line-height: 15px;
+  color: red;
+  min-height: 15px; /* mantiene espacio aunque no haya error */
+  display: block;
+  margin-top: -8px;
+}
+
+.modal__input-error_active {
+  color: red;
+  visibility: visible;
+}
+.modal__submit-btn_disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

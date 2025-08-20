@@ -207,9 +207,11 @@
               alt="Close icon"
             />
           </button>
+
           <form class="modal__form" name="avatar-form" novalidate>
             <h2 class="modal__title">Edit profile avatar</h2>
-            <label for="card-title-input" class="modal__label">
+
+            <label for="avatar-url-input" class="modal__label">
               Profile Picture
               <input
                 type="url"
@@ -220,6 +222,9 @@
                 required
               />
             </label>
+            <!-- 👇 ESTE SPAN EVITA EL CRASH EN validation.js -->
+            <span class="modal__input-error" id="avatar-url-input-error"></span>
+
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>

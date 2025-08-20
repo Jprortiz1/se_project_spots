@@ -6,7 +6,11 @@ let currentUserId = null; // para saber si el usuario actual dio like
 
 import "./index.css";
 import Api from "../scripts/Api.js";
-import { resetValidation, validationSettings } from "../scripts/validation.js";
+import {
+  resetValidation,
+  validationSettings,
+  enableValidation,
+} from "../scripts/validation.js";
 
 // Carga imágenes
 import logoSrc from "../images/Logo.svg";
@@ -68,6 +72,7 @@ const avatarForm = document.forms["avatar-form"];
 const avatarInput = avatarForm.querySelector("#avatar-url-input");
 const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-btn");
 const avatarElement = document.querySelector(".profile__avatar");
+const avatarEditButton = document.querySelector(".profile__avatar-edit-button");
 
 // Delete confirmation modal
 const deleteConfirmationModal = document.querySelector(
@@ -253,6 +258,13 @@ function handleUpdateAvatar(evt) {
     });
 }
 
+// 🔹 Función reutilizable para abrir el modal de avatar
+function openAvatarModal() {
+  avatarForm.reset();
+  resetValidation(avatarForm, validationSettings);
+  openModal(avatarModal);
+}
+
 function hanldeDeleteCard(evt) {
   evt.preventDefault();
 
@@ -286,12 +298,16 @@ function hanldeDeleteCard(evt) {
       deleteButton.disabled = false;
     });
 }
-
+// Activa la validación en todos los formularios
+enableValidation(validationSettings);
 /* ---------- EVENT LISTENERS ---------- */
+
+// Edit profile
 profileEditButton.addEventListener("click", handleEditButtonClick);
 editModalCloseBtn.addEventListener("click", () => closeModal(editModal));
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
+// New post
 newPostForm.addEventListener("submit", handleNewPostFormSubmit);
 addPostButton.addEventListener("click", () => {
   newPostForm.reset();
@@ -300,14 +316,22 @@ addPostButton.addEventListener("click", () => {
 });
 newPostModalCloseBtn.addEventListener("click", () => closeModal(newPostModal));
 
+// Avatar
 avatarForm.addEventListener("submit", handleUpdateAvatar);
-avatarElement.addEventListener("click", () => {
-  avatarForm.reset();
-  resetValidation(avatarForm, validationSettings); // botón "Save" gris si vacío
-  openModal(avatarModal);
-});
+avatarElement.addEventListener("click", openAvatarModal);
+if (avatarEditButton) {
+  avatarEditButton.addEventListener("click", openAvatarModal);
+}
 avatarModalCloseBtn.addEventListener("click", () => closeModal(avatarModal));
 
+// Image preview close (opcional: ya lo manejas por overlay)
+if (imagePreviewModalCloseBtn) {
+  imagePreviewModalCloseBtn.addEventListener("click", () =>
+    closeModal(imagePreviewModal)
+  );
+}
+
+// Delete confirmation
 deleteConfirmationForm.addEventListener("submit", hanldeDeleteCard);
 cancelDeleteBtn.addEventListener("click", () => {
   closeModal(deleteConfirmationModal);
